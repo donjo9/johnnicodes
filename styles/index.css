@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* CSS Reset */
-body, html, #__next{
-    box-sizing: border-box;    
-    width: 100vw;
-    height: 100vh;
+body,
+html,
+#__next {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 *,
