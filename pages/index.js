@@ -22,49 +22,23 @@ export default () => (
           eu, suscipit maximus velit. Suspendisse ac ante a risus faucibus
           mattis. Nunc porta malesuada erat, euismod efficitur risus ultrices
           eget. Phasellus justo nisi, sollicitudin eget accumsan et, cursus at
-          magna. Ut a consequat eros, sit amet mollis nunc. Vivamus in fringilla
-          nunc. Morbi tempor faucibus ipsum, sit amet tincidunt diam euismod
-          nec. In eu ornare neque. Praesent posuere egestas eros ut facilisis.
-          Vivamus venenatis tristique erat, ut suscipit turpis facilisis eu. Ut
-          in eros quis lorem fermentum gravida. Etiam euismod elit in dolor
-          laoreet sodales. Nullam sit amet lacinia diam, eget pulvinar justo.
-          Cras vulputate risus bibendum molestie lobortis. Sed quis enim augue.
-          Integer blandit nunc at ligula auctor consequat. In ac tellus nec
-          justo tincidunt rutrum. Nulla commodo dui id nisl elementum, et
-          convallis ante sodales. Morbi dictum justo massa, eget fermentum arcu
-          iaculis eleifend. Etiam sed consectetur sapien, vel congue turpis.
+          magna.
         </p>
       </section>
-      <section>
+      <section className="grid">
         <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
+          title="Url Shortner"
+          description="A typical url shortner, with auto or custom slug. New Urls are saved trough NextJS API route on Vercel Now, to a FaunaDB instance. The Redirects are handled serverside"
+          stack={["nextjs", "faunadb", "Vercel now"]}
+          source="https://github.com/donjo9/shorturl"
+          demo="https://jo9.dk/"
         />
         <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
-        />
-        <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
-        />
-        <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
-        />
-        <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
-        />
-        <Card
-          title="lvl42 Url Shortner"
-          description="A typical url shortner, with auto og custom slug"
-          stack={["nextjs", "faunadb", "vercel"]}
+          title="Run With Johnni"
+          description="My personal Endomondo Lite, a static site that displayes data taken from my Garmin Forerunner 30 in a Endomondo like fasion"
+          stack={["Gatsby", "MongoDB", "Netlify"]}
+          source="https://github.com/donjo9/run-with-gatsby"
+          demo="https://run.with.johnni.ninja/"
         />
       </section>
     </main>
