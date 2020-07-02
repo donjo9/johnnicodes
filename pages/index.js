@@ -29,7 +29,7 @@ export default () => (
         <Card
           title="Url Shortner"
           description="A typical url shortner, with auto or custom slug. New Urls are saved trough NextJS API route on Vercel Now, to a FaunaDB instance. The Redirects are handled serverside"
-          stack={["nextjs", "faunadb", "Vercel now"]}
+          stack={["NextJS", "Faunadb", "Vercel now"]}
           source="https://github.com/donjo9/shorturl"
           demo="https://jo9.dk/"
         />
