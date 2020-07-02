@@ -1,13 +1,15 @@
 import Card from "../components/card";
+import SoMo from "../components/some";
 
 export default () => (
   <div className="min-h-full min-w-full  bg-blue-900 text-gray-200">
     <main className="p-6 m-auto my-0 container">
-      <header className="mb-5">
-        <h1 className="text-orange-700 font-sans text-4xl">Johnni.codes</h1>
-        <h5 className="font-mono text-gray-400 text-sm">
+      <header className="mb-5 grid grid-cols-4">
+        <h1 className="text-orange-700 font-sans text-4xl col-span-4">Johnni.codes</h1>
+        <h5 className="font-mono text-gray-400 text-sm col-span-2">
           personal site of Johnni D. Mortensen
         </h5>
+        <SoMo />
       </header>
 
       <section className="">
