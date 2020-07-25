@@ -20,8 +20,15 @@ export default () => (
       </header>
 
       <section className="">
-        <h1 className="text-orange-600 text-lg">Bio:</h1>
-        <p></p>
+        <h1 className="text-orange-600 text-xl">Bio:</h1>
+        <p className="py-1">
+          Hi! My name is Johnni, my work title is Engineer, but I'm more than that,
+          and this is my space.
+        </p>
+        <p className="py-1">
+          So who am i? im a father, husband and developer by ♥. Problem solving is what drives me, and it's what i've made my living. 
+        </p>
+        <p className="py-1">This is where my work will go on display, so take a look around</p>
       </section>
       <section className="grid">
         <Card
