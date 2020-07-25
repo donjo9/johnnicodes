@@ -1,14 +1,9 @@
 import React from "react";
-import Head from "next/head";
 
 const Card = ({ title, description, stack, source, demo }) => {
   const stackItems = stack.map((s) => <li key={s}>{s}</li>);
   return (
     <div className="text-gray-200 container my-6 rounded-lg shadow-md border border-blue-700 bg-blue-900 p-3">
-      <Head>
-        <title>{"developer by <3"}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
       <h1 className="text-orange-600 text-lg mb-3">{title}</h1>
       <h1 className="py-2 underline">Description:</h1>
       <p className="py-2">{description}</p>
