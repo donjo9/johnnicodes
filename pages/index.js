@@ -2,7 +2,12 @@ import Card from "../components/card";
 import SoMo from "../components/some";
 import Head from "next/head";
 
-export default ({projects}) => (
+const client = require("contentful").createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export default ({ projects }) => (
   <div className="min-h-full min-w-full  bg-blue-900 text-gray-200">
     <Head>
       <title>{"developer by ♥"}</title>
@@ -34,33 +39,29 @@ export default ({projects}) => (
         </p>
       </section>
       <section className="grid">
-        {projects && projects.map(p => <Card key={p.source} {...p} ></Card>)}
+        {projects &&
+          projects.map((p) => (
+            <Card key={p.fields.source} {...p.fields}></Card>
+          ))}
       </section>
     </main>
   </div>
 );
 
 export const getStaticProps = async (context) => {
+  const entries = await client.getEntries();
+  if (entries.items) {
+    console.dir(entries.items);
+    entries.items.forEach((element) => {
+      console.dir(element.fields.description);
+    });
+  } else {
+    console.dir(`Error getting Entries for ${contentType.name}.`);
+  }
+
   return {
     props: {
-      projects: [
-        {
-          title: "Url Shortner",
-          description:
-            "A typical url shortner, with auto or custom slug. New Urls are saved trough NextJS API route on Vercel Now, to a FaunaDB instance. The Redirects are handled serverside",
-          stack: ["NextJS", "Faunadb", "Vercel now"],
-          source: "https://github.com/donjo9/shorturl",
-          demo: "https://jo9.dk/",
-        },
-        {
-          title: "Run With Johnni",
-          description:
-            "My personal Endomondo Lite, a static site that displayes data taken from my Garmin Forerunner 30 in a Endomondo like fasion",
-          stack: ["Gatsby", "MongoDB", "Netlify"],
-          source: "https://github.com/donjo9/run-with-gatsby",
-          demo: "https://run.with.johnni.ninja/",
-        },
-      ],
+      projects: [...entries.items],
     },
   };
 };
