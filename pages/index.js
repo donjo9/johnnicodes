@@ -41,7 +41,7 @@ export default ({ projects }) => (
       <section className="grid">
         {projects &&
           projects.map((p) => (
-            <Card key={p.fields.source} {...p.fields}></Card>
+            <Card key={p.fields.sourceUrl} {...p.fields}></Card>
           ))}
       </section>
     </main>

@@ -1,7 +1,7 @@
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const Card = ({ title, description, stack, source, demo }) => {
+const Card = ({ title, description, stack, sourceUrl, demo }) => {
   const stackItems = stack.map((s) => <li key={s}>{s}</li>);
   return (
     <div className="text-gray-200 container my-6 rounded-lg shadow-md border border-blue-700 bg-blue-900 p-3">
@@ -23,7 +23,7 @@ const Card = ({ title, description, stack, source, demo }) => {
         className="inline-block cursor-pointer rounded-lg border-gray-700 bg-orange-600 text-gray-300 border-2 m-2 py-2 px-4"
         target="_blank"
         rel="noopener noreferrer"
-        href={source}
+        href={sourceUrl}
         alt="Link to source"
       >
         Source
