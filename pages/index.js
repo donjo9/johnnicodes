@@ -14,8 +14,8 @@ export default ({ projects }) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <main className="p-6 m-auto my-0 container">
-      <header className="mb-5 grid grid-cols-4">
-        <h1 className="text-orange-700 font-sans text-4xl col-span-4">
+      <header className="mb-5 grid grid-cols-2 sm:grid-cols-4">
+        <h1 className="text-orange-700 font-sans text-4xl col-span-2 sm:col-span-4">
           Johnni.codes
         </h1>
         <h5 className="font-mono text-gray-400 text-sm col-span-2">

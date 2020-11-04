@@ -35,7 +35,7 @@ const SoMeItem = ({ title, some, url }) => {
 
 const SoMo = () => {
   return (
-    <ul className="col-span-2 flex flex-row justify-end text-gray-400 font-mono">
+    <ul className="col-span-2 flex flex-row sm:justify-end text-gray-400 font-mono">
       {SoMeLinks.map((s) => (
         <SoMeItem key={s.url} {...s}></SoMeItem>
       ))}
