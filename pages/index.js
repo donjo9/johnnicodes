@@ -1,5 +1,5 @@
 import Card from "../components/card";
-import SoMo from "../components/some";
+import SoMe from "../components/some";
 import Head from "next/head";
 
 const client = require("contentful").createClient({
@@ -7,7 +7,7 @@ const client = require("contentful").createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default ({ projects }) => (
+export default ({ projects, some }) => (
   <div className="min-h-full min-w-full  bg-blue-900 text-gray-200">
     <Head>
       <title>{"developer by ♥"}</title>
@@ -21,7 +21,7 @@ export default ({ projects }) => (
         <h5 className="font-mono text-gray-400 text-sm col-span-2">
           personal site of Johnni D. Mortensen
         </h5>
-        <SoMo />
+        <SoMe some={some} />
       </header>
 
       <section className="">
@@ -49,19 +49,13 @@ export default ({ projects }) => (
 );
 
 export const getStaticProps = async (context) => {
-  const entries = await client.getEntries();
-  if (entries.items) {
-    console.dir(entries.items);
-    entries.items.forEach((element) => {
-      console.dir(element.fields.description);
-    });
-  } else {
-    console.dir(`Error getting Entries for ${contentType.name}.`);
-  }
+  const projects = await client.getEntries({ content_type: "project" });
+  const some = await client.getEntries({ content_type: "soMo" });
 
   return {
     props: {
-      projects: [...entries.items],
+      projects: [...projects.items],
+      some: [...some.items],
     },
   };
 };

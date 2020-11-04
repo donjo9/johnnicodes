@@ -1,46 +1,32 @@
 import React from "react";
+const client = require("contentful").createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
 
-const SoMeLinks = [
-  {
-    url: "https://www.twitter.com/johnnicodes",
-    title: "Link to my twitter account",
-    some: "Twitter",
-  },
-  {
-    url: "https://www.github.com/donjo9",
-    title: "Link to my Github account",
-    some: "Github",
-  },
-  {
-    url: "https://www.linkedin.com/in/johnnim/",
-    title: "Link to my Linked In account",
-    some: "LinkedIn",
-  },
-];
-
-const SoMeItem = ({ title, some, url }) => {
+const SoMeItem = ({ title, description, url }) => {
   return (
     <li className="mx-1">
       <a
         rel="noopener noreferrer"
         href={url}
         className="underline hover:text-orange-600 focus:text-orange-600"
-        title={title}
+        title={description}
       >
-        {some}
+        {title}
       </a>
     </li>
   );
 };
 
-const SoMo = () => {
+const SoMe = ({ some }) => {
   return (
     <ul className="col-span-2 flex flex-row sm:justify-end text-gray-400 font-mono">
-      {SoMeLinks.map((s) => (
-        <SoMeItem key={s.url} {...s}></SoMeItem>
+      {some.map((s) => (
+        <SoMeItem key={s.fields.url} {...s.fields}></SoMeItem>
       ))}
     </ul>
   );
 };
 
-export default SoMo;
+export default SoMe;
