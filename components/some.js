@@ -4,6 +4,7 @@ const SoMeItem = ({ title, description, url }) => {
   return (
     <li className="mx-1">
       <a
+        target="_blank"
         rel="noopener noreferrer"
         href={url}
         className="underline hover:text-orange-600 focus:text-orange-600"
