@@ -1,11 +1,7 @@
 import Card from "../components/card";
 import SoMe from "../components/some";
 import Head from "next/head";
-
-const client = require("contentful").createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+import contentful from "../utils/contentful";
 
 export default ({ projects, some }) => (
   <div className="min-h-full min-w-full  bg-blue-900 text-gray-200">
@@ -49,8 +45,8 @@ export default ({ projects, some }) => (
 );
 
 export const getStaticProps = async (context) => {
-  const projects = await client.getEntries({ content_type: "project" });
-  const some = await client.getEntries({ content_type: "soMo" });
+  const projects = await contentful.getEntries({ content_type: "project" });
+  const some = await contentful.getEntries({ content_type: "soMo" });
 
   return {
     props: {
